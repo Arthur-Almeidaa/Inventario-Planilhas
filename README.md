@@ -1,4 +1,5 @@
 # Inventario-Planilhas
-Sistema que organiza as suas planilhas do Excel.
-![image](https://github.com/Arthur-Almeidaa/Inventario-Planilhas/assets/156681156/643365fa-959d-42b2-8449-e0a6d33ebc31)
+Sistema que organiza seus documentos (Excel, Google Planilhas, Word etc) para empresa Exceed Games Park.
+![Launcher 2 0](https://github.com/user-attachments/assets/38600b93-47e6-437f-b01c-6c2fe6f761ba)
+
 
