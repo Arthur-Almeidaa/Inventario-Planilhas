@@ -17,8 +17,9 @@ class FooterFrame(ctk.CTkFrame):
         self.grid(row=4, column=0, sticky='sw')
         self.configure(fg_color=FOOTER_FRAME_COLOR)
 
-        self.logo = ctk.CTkImage(Image.open('images/logo.jpg'), size=(200, 75))
-        self.add_icon = ctk.CTkImage(Image.open('images/add.png'), size=(25, 25))
+        self.logo = ctk.CTkImage(Image.open(IMAGE_LOGO), size=(200, 75))
+        self.add_icon = ctk.CTkImage(Image.open(IMAGE_ADD), size=ICONS_SIZE)
+        self.add_json = ctk.CTkImage(Image.open(IMAGE_ADICIONAR), size=ICONS_SIZE)
 
         panel = ctk.CTkLabel(self, image=self.logo, text='')
         panel.place(relx=0.75, rely=0.3)
@@ -38,17 +39,17 @@ class FooterFrame(ctk.CTkFrame):
         add_spreadsheet_label.place_configure(x=(WINDOW_WIDTH / 5) + 4, y=(WINDOW_HEIGHT / 5) / 3 - 5)
 
         # ----// Buttons \\----
-        add_spreadsheet_button = ctk.CTkButton(self, height=25, width=25, text='+', fg_color=MAIN_BUTTON_COLOR,
-                                               font=ctk.CTkFont('<Helvetica>', size=14),
-                                               command=lambda: self.add_spreadsheet_json(add_spreadsheet_entry))
+        add_spreadsheet_button = ctk.CTkButton(self, height=5, width=5, text='', fg_color=FOOTER_FRAME_COLOR,
+                                               font=ctk.CTkFont('<Helvetica>',),
+                                               command=lambda: self.add_spreadsheet_json(add_spreadsheet_entry), image=self.add_json)
 
         add_spreadsheet_button.bind('<Enter>',
-                                    lambda event, btn=add_spreadsheet_button: btn.configure(fg_color=HOLD_BUTTON_COLOR))
+                                    lambda event, btn=add_spreadsheet_button: btn.configure(fg_color=MAIN_FRAME_COLOR))
         add_spreadsheet_button.bind('<Leave>',
-                                    lambda event, btn=add_spreadsheet_button: btn.configure(fg_color=MAIN_BUTTON_COLOR))
+                                    lambda event, btn=add_spreadsheet_button: btn.configure(fg_color=FOOTER_FRAME_COLOR))
 
         add_spreadsheet_button.place_configure(x=(WINDOW_WIDTH / 5) + (WINDOW_WIDTH / 6) + 20,
-                                               y=(WINDOW_HEIGHT / 5) / 2)
+                                               y=(WINDOW_HEIGHT / 5) / 2 - 5)
 
         filedialog_button = ctk.CTkButton(self, height=4, width=4, image=self.add_icon, fg_color=FOOTER_FRAME_COLOR,
                                           text='',

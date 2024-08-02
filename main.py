@@ -1,7 +1,7 @@
-import customtkinter as ctk
 from settings import *
 from footer import FooterFrame
 from main_frame import MainFrame
+import customtkinter as ctk
 
 
 class App(ctk.CTk):
@@ -15,10 +15,9 @@ class App(ctk.CTk):
         self.rowconfigure((0, 1, 2, 3, 4), weight=1)
         self.resizable(width=False, height=False)
 
-        self.iconbitmap('images/icone.ico')
+        self.iconbitmap(ICON_IMAGE)
 
         main_frame = MainFrame(self)
-
         FooterFrame(self, main_frame)
 
 
